@@ -4,7 +4,10 @@ let array = [1,2,4,5,6];
 let array2=[99,true,`speed`];
 let movies = new Array(`Avengers`,`Spiderman`,`Thor`)
 console.log(array);
-console.log(array2[1]);
+
+console.log(array2[1]);//to acces your array -> this means u want
+// to access element on index 1 in array2 which is a true(boolean) value
+
 console.log(movies);
 
 // array methods
