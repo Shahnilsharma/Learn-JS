@@ -133,6 +133,7 @@ console.log(Facebook.address.country2.name);
     //to get all the object keys,values or entries 
     console.log(Object.keys(profile)); //this will give u all the keys of the object   
     console.log(Object.values(profile)); //this will give u all the values of the variables
+    console.log(Object.values(profile)); //this will give u all the values of the variables
     console.log(Object.entries(profile)); //this will give u all the keys and values of the object   
 
 
