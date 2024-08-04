@@ -43,3 +43,37 @@ function Sum3(number1=0,number2=0){
 //you can also keep some default values if the arguments are not passed while 
 // calling the default value wil be passed or else it will give an undefined value
 Sum3(5); //this will print 5+0=5
+
+
+//lets say you want a function which might pass 2 parameters ,
+//  which also might pass 10 parameters then we need rest operator "..."
+// rest operator also called spread operator depending on its functionality
+function GetIds(...rest) {
+    return Id;
+  }
+    console.log(GetIds(1,2,3,4,5,6,7)); //this will print all the arguments passed in the function
+    //using rest is a convention we can give any name to the parameters with ...
+
+    //objects with functions
+let profile={
+    userName:'Ashish',
+    Id:"1N9M"
+}
+let {userName,Id}=profile; //now u dont need to acces objects using dot notation
+function GetProfile({}) {
+    return `Name: ${userName}, Id: ${Id}`;
+  }
+ console.log(GetProfile(profile)); //this will print the profile object
+console.log({
+    userName:"Saleem",
+    Id:"2020NM"
+}); 
+// we can also pass the whole object directly as an argument
+ 
+// Array with functions
+let arr=[1,2,3,4,5,6,7,8,9,10];
+
+function GetArray(anyArray) {
+    return anyArray[2];
+  }
+console.log(GetArray(arr)); //this will print the 3rd element of the array on index 2
