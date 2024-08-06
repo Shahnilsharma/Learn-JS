@@ -139,3 +139,31 @@ console.log(Facebook.address.country2.name);
 
      console.log(User.hasOwnProperty('status'));
      console.log(profile.hasOwnProperty('name'));
+
+
+     //object overriding
+     
+
+
+const userOne = new Object();
+
+userOne.name= "Hassan" ;
+userOne.userName= "Hassan02" ;
+userOne.role="Software-Engineer" ;
+
+const userTwo= new Object();
+userTwo.name= "Asim" ;
+userTwo.userName= "Asim01" ;
+userTwo.role="Software-Engineer" ;
+
+// Let's merge both objects
+const assignUsers = Object. assign({},userOne ,userTwo) ;
+console.log(assignUsers);
+
+const spreadUsers = {...userOne ,...userTwo} ;
+console.log(spreadUsers);
+
+//in javascript when we merge 2 objects when they both
+// have same varibale names then after merging
+// the object2 over rides the key-values pairs of the
+// first object
