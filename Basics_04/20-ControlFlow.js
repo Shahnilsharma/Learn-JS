@@ -83,7 +83,7 @@ const month = "march"
 switch (month) {
     case "jan":
         console.log("January");
-        break;
+        break;  //this is mnadatory to break of exit from the present case and move to the other
     case "feb":
         console.log("February");
         break;
