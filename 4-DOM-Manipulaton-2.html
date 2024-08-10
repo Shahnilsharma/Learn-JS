@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body  style="background-color:#212121; color: white;">
+     <!-- we will crete a whole container and assign id values text using DOM manipulation in javascript -->
+
+     <script>
+        //creating a div
+        const div = document.createElement('div');
+        console.log(div)
+        div.className = "parent";
+        div.id = 'main';
+        div.setAttribute('title', 'conatainer');
+        // div.innerText="This is DOM Manipulation"//its not an optimized way to add text we also can add test by:
+        const divText=document.createTextNode("optizmed way to add text");
+        div.appendChild(divText);
+
+        //appending the div to the body
+        document.body.appendChild(div);
+
+        //styling
+        div.style.background="pink";
+        div.style.padding="40px";
+      
+        //creating a ul with a randomly generated id
+        const ul = document.createElement("ul");
+        ul.id = Math.round(Math.random()*10+1)
+        console.log(ul);
+           
+    </script>
+</body>
+</html>

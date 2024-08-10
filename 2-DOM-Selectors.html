@@ -1,0 +1,94 @@
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <div class="Main">
+        <h1 id="head">Now you see me</h1>
+    </div>
+    <p id="para" class="Paragraph">This is the text inside <span  style="display: none;" >This is the text inside span</span></p>
+    
+    <h2>Heading1</h2>
+    <h2>Heading2</h2>
+    <h2>Heading3</h2>
+
+    <ul>
+        <li>Value1</li>
+        <li>Value2</li>
+        <li>Value3</li>
+    </ul>
+
+    <script>
+    //    to get a any element via id or class 
+
+
+ const head = document.getElementById('head'); //the element with id 'head' is stored in the head variable
+console.log(head);
+const para = document.getElementById('para');
+console.log(para);
+ 
+ //we can get the id and class name of the variable which stors any attribute
+    console.log(head.id);
+    console.log(para.className);
+
+
+//getting and setting attributes
+console.log(head.getAttribute('id'));//getting the id of the element
+console.log(para.getAttribute('class')); 
+
+//setting the attribute
+head.setAttribute('title', 'heading');//setting the title attribute to the element
+console.log(head.getAttribute('title'));//getting the title attribute of the element
+
+
+//styling
+head.style.padding="20px";
+para.style.backgroundColor="orange"
+
+//innertext, text content and innerHTML
+
+console.log(para.innerText);//this gives you only visible text 
+
+console.log(para.textContent);//this returns all the text content no matter its visible on webpage
+
+console.log(para.innerHTML);//this returns the whole html structure of the element
+
+const main = document.getElementsByClassName('Main');
+console.log(main);//this returns the html collection of the elements with class name 'Main'
+// to apply perform tasks on it we have to convert into array first
+const mainArray = Array.from(main);     
+console.log(Array.from(main));
+
+
+
+//quey selector and queryselectorAll
+
+const query=document.querySelector('h2');
+//query selector selects the first element we want in our case we made 3 h2 items and queryselector is selcting only the fisrt h2
+console.log(query);
+console.log(document.querySelector('#head'));
+console.log(document.querySelector('.main'));
+//queryselectorAll selects all the elements we want in our case we made 3 h2 items
+// you can give id and class to select a whole conatiner 
+
+//query select all will select all the elements with the element name
+console.log(document.querySelectorAll('h2'));//now we can access all the h2 in this webpage
+console.log(document.querySelectorAll('.Main'));//now we can access all the elements with class name 'Main'
+
+//we can also use queryselector to select the elements with the help of their attributes
+console.log(document.querySelector('p[style]'));//this will select the element with style attribute
+
+//but this querySelectorAll returns a node list so we have to treat it like array it not array it just array like
+
+const li = document.querySelectorAll('li');
+li[0].style.color="pink"; //we treat is as array
+
+//we can also use forEach loop to iterate over the node list
+// li.style.background="green" //this wont work we have to use the array implementation
+li.forEach((li)=>{
+    li.style.background="green";
+})
+    </script>
+</body> 
+</html>
+
