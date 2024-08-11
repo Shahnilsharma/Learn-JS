@@ -1,0 +1,61 @@
+<html>
+<head>
+    <title>DOM</title>
+</head>
+<body>
+    
+<ul class="languages">
+    <li> Javascript </li>
+</ul>
+ 
+<div class="days">
+<!-- we wil manipulate it -->
+    <h4>Monday</h4>
+    <h4>Tuesday</h4>
+    <h4>Wednesday</h4>
+    <h4>Thursday</h4>
+</div>
+<script>
+//lets crete a function which add a new language to our ul as an li item
+//we can add li by adding innerHTML but it not an optimized way this method traverses the whole tree 
+//so we will use the text node method to add the text
+const addLanguage = (langName)=>{
+   const li = document.createElement("li");
+   //we will get the class name add and add this li to the ul with that class
+    li.appendChild(document.createTextNode(langName))
+    document.querySelector(".languages").appendChild(li);
+}
+addLanguage('Python');
+addLanguage('C++');
+addLanguage('C#');
+console.log(document.querySelector(".languages").innerText);
+
+//now we will edit the day using various methods
+
+// method1-outerhtml
+const firstDay = document.querySelector("h4:first-child");
+firstDay.outerHTML="<h4>Sunday</h4>";
+
+//method2
+const secondDay = document.querySelector("h4:nth-child(2)");
+secondDay.innerHTML="saturday";
+
+//method3 - replacewith
+
+const thirdDay = document.querySelector('h4:nth-child(3)');
+const newDay = document.createElement("h4");
+newDay.innerText="friday";
+thirdDay.replaceWith(newDay);
+
+//removing 
+const lastDay=document.querySelector('h4:last-child');
+lastDay.remove();
+
+const all= document.querySelector(".days")
+console.log(all.textContent);
+
+
+</script>
+
+</body>
+</html>
