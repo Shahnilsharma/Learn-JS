@@ -9,11 +9,8 @@
  * 
  * For more information and documentation about Node.js, you can refer to the official Node.js website and its documentation.
  
+ 
 # DOM Manipulation
-* Before Starting DOM make sure you know some basics of html
-* afterward you have to switch to the console of your browser to understand dom
+* Before Starting DOM make sure you know some basics of html and css
+* afterwards you have to switch to the console of your browser to understand dom
 * DOM stands for Document Object Model, which is a programming interface for HTML and XML documents.
-
-```javascript
-
-```
