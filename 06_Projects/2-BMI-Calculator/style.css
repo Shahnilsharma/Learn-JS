@@ -39,7 +39,17 @@ label{
     font-size: 20px;
 }
 
-#result{
+#result *{
     text-align: center;
     margin-top: 20px;
+}
+#outcome *{
+    text-align: center;
+    margin-top: 20px;
+}
+#result span{
+    color: rgb(0, 238, 255);
+}
+#outcome span{
+    color: rgb(255, 170, 14);
 }

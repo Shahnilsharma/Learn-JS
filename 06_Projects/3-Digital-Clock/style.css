@@ -1,0 +1,26 @@
+body{
+    background: #212121;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.clock{
+    color: rgb(0, 0, 0);
+    font-size: 1.5em;
+    font-weight: 500;
+    width: 150px;
+    height: 150px;
+    margin: 50px auto;
+    background: #ff23e2;
+    box-shadow: 0 0 20px rgb(238, 0, 255);
+    border-radius: 115px;
+    padding: 40px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
