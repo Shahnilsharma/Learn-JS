@@ -1,0 +1,52 @@
+body{
+    background: #212121;
+    color: blueviolet;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+
+
+.container {
+    margin-top: 100px;
+}
+
+.guess-input {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.result {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.restart-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+.restart-button:hover {
+    background-color: #ff7043;
+}
+input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#Submit {
+    background-color: blueviolet;
+    color: #fff;
+    font-size: 15px;
+    padding: 12px 24px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+   }
+

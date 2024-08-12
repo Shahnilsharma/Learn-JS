@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guess the Random Number</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Guess the Random Number</h1>
+        <input type="number" class="guess-input" id="guess" placeholder="Enter your guess">
+        <button id="Submit" onclick="checkGuess()">Submit</button>
+        <div class="result" id="result"></div>
+        <div class="attempts" id="attempts"></div>
+        <div class="previous-guesses" id="previous-guesses"></div>
+        <button class="restart-button" onclick="restartGame()">Restart</button>
+    </div>
+
+</body>
+<script src="script.js"></script>
+</html>
