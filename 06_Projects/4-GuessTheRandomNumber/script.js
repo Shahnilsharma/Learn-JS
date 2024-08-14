@@ -2,8 +2,11 @@
 let randomNumber = Math.floor(Math.random() * 100) + 1;
 let attempts = 0;
 let previousGuesses = [];
+const submit = document.querySelector('#Submit');
+const restart = document.querySelector('#restart-button');
 
- const checkGuess=()=> {
+submit.addEventListener('click',()=>{
+  if (attempts<10){
   // Get the user's guess from the input field
   let guess = parseInt(document.getElementById('guess').value);
 
@@ -23,6 +26,7 @@ let previousGuesses = [];
 
   // Checking if the guess is correct
   if (guess === randomNumber) {
+    result.style.color='white'
     result.textContent = 'Congratulations! You guessed the correct number in ' + attempts + ' attempts.';
     document.getElementById('guess').disabled = true;
     document.getElementById('restart-button').style.display = 'block';
@@ -40,14 +44,21 @@ let previousGuesses = [];
 
   // Check if the maximum number of attempts has been reached
   if (attempts === 10) {
-  result.textContent = 'Game over. You did not guess the correct number. The number was ' + randomNumber + '.';
-  result.style.color='orange'
+    result.textContent = 'Game over. You did not guess the correct number. The number was ' + randomNumber + '.';
+    result.style.color='orange'
     document.getElementById('guess').disabled = true;
     document.getElementById('restart-button').style.display = 'block';
   }
 }
+else 
+  {
+    submit.style.display="none";
+  result.textContent="Restart the Game";
+  }
+});
 //we need to restart the game too
-const restartGame=()=> {
+restart.addEventListener('click', () => {
+  submit.style.display="block"
   randomNumber = Math.floor(Math.random() * 100) + 1;
   attempts = 0; //resets attempst to 0
   previousGuesses = []; // clearing array
@@ -64,4 +75,4 @@ const restartGame=()=> {
   document.getElementById('previous-guesses').textContent = '';
 
   document.getElementById('restart-button').style.display = 'none';
-}
+});

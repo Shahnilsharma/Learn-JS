@@ -41,6 +41,7 @@ input{
 }
 
 #Submit {
+    margin: auto;
     background-color: blueviolet;
     color: #fff;
     font-size: 15px;
