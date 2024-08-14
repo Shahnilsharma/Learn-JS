@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get keys</title>
+    <style>
+        body{
+            background: #212121;
+            color: white;
+        }
+        table{
+            border: 1px solid rgb(255, 254, 254);
+            border-collapse:separate;
+            margin:200px auto;
+        }
+        td{
+            border: 1px solid rgb(255, 255, 255);
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="insert"></div>
+    
+</body>
+<script>
+    let insert = document.querySelector('#insert');
+    window.addEventListener("keydown",(e)=>{
+        insert.innerHTML = `<table>
+        <tr>
+            <td>Key</td>
+            <td>Key code</td>
+            <td>Code</td>
+        </tr>
+        <tr>
+            <td>${e.key===" "?"space":e.key}</td>
+            <td>${e.keyCode}</td>
+            <td>${e.code}</td>
+        </tr>
+
+
+    </table>`
+    })
+
+
+</script>
+</html>
