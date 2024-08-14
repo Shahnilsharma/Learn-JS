@@ -21,8 +21,8 @@ body{
     font-weight: bold;
 }
 
-.restart-button {
-    margin-top: 20px;
+#restart-button {
+    margin: 20px auto;
     padding: 10px 20px;
     background-color: #333;
     color: #fff;
