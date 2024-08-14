@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous</title>
+</head>
+<body>
+    <h1> Golden fish</h1>
+    <button id="stop"> stop text Change </button>
+    <button id="stopInterval">StopInterval </button>
+</body>
+<script>
+// In JavaScript, synchronous (sync) and asynchronous (async) operations handle tasks differently:
+// Synchronous (Sync):
+
+// Operations are executed sequentially.
+// Each operation waits for the previous one to complete before starting.
+// Can lead to blocking, where a long-running task prevents subsequent tasks from executing.
+
+// Asynchronous (Async):
+// Operations can be executed concurrently.
+// Tasks can start before previous ones complete.
+// Uses callbacks, promises, or async/await to handle operations.
+// Helps in non-blocking execution, improving performance for tasks like I/O operations.
+
+// Synchronous example
+console.log('Start');
+console.log('Middle');
+console.log('End');
+//they are executed as stack in a row from bottom to top 
+//sync code is ablocking code it does nto let the next line
+//to execute untill first one executes
+
+// Asynchronous example
+console.log('Start');
+setTimeout(() => console.log('Middle'), 1000);
+console.log('End');
+//on the contrary the setTimeout is an asyn function which will execute at
+//its alotted time
+
+//calling functions by reference
+
+let displayGreetings = () => {
+  console.log("We are learning JS");
+}
+setTimeout(displayGreetings,2000);
+//displayGreetings is a reference to the function 
+//not a function call
+//this will call the function after 2 seconds
+
+//sometimes we need to stop some specific async functions
+// to execute for that we use clearTimeout
+
+let heading = document.querySelector('h1');
+let changeText = () => {
+  heading.textContent = 'I am changed';
+}
+let timeout = setTimeout(changeText, 3000);//this change sthe text in 3 secs
+//to stop this we use clearTimeout by clicking the stop button
+let stopButton = document.querySelector('#stop');
+stopButton.addEventListener('click', () => {
+  clearTimeout(timeout);
+});
+
+//setInterval
+//this is used to repeat a function after some time
+let num = 1;
+let alertmesages = ()=>{
+    return alert(`Number ${num++}`)
+}
+
+
+/*comment out this line to see what happens
+               |
+               v      
+ let interval = setInterval(alertmesages, 3000); 
+               */
+let stopAlert = document.querySelector('#stopInterval');
+stopAlert.addEventListener('click', () => {
+  clearInterval(interval);
+});
+
+</script>
+</html>

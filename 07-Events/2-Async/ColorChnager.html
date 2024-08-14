@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer</title>
+</head>
+<body>
+    <h1>Click start or stop to begin and stop changing the background color</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+
+// Define the possible hex numbers
+let hexNumbers = '0123456789ABCDEF';
+
+// Initialize the hex digit with a '#' symbol
+let hexDigit = '#';
+
+// Generate a random hex color
+let randomHex = () => {
+    for (i = 0; i < 6; i++) {
+        hexDigit += hexNumbers[Math.floor(Math.random() * 16)];
+    }
+    return hexDigit;
+}
+
+// Change the background color of the body
+let changeColor = () => {
+    document.querySelector('body').style.backgroundColor = randomHex();
+    hexDigit = '#';
+} 
+
+// Initialize variables for interval and running status
+let interval;
+let isRunning = false;
+
+// Get the start and stop buttons
+let start = document.querySelector('#start');
+let stop = document.querySelector('#stop');
+
+// Start button click event listener
+start.addEventListener('click', () => {
+    // Only start if not already running
+    if (!isRunning) {
+        interval = setInterval(changeColor, 1000);
+        isRunning = true;
+    }
+});
+
+// Stop button click event listener
+stop.addEventListener('click', () => {
+    clearInterval(interval);
+    isRunning = false;
+});
+
+
+</script>
+
+</html>
