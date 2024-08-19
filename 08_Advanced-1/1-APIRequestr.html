@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<p>
+     API stands for Application Programming Interface. It is a set of rules and protocols that allows different software applications to communicate and interact with each other. APIs define the methods, data formats, and conventions that developers can use 
+
+ helpful for retrieving data from a remote server, sending data to a third-party service, integrating different software components, or even controlling hardware device
+
+earlier api were requested usin ajax(Asynchronous Javascript and xml) method 
+there are 5 states
+ 0: request not initialized  
+ 1: server connection established
+ 2: request received
+ 3: processing request
+ 4: request finished and response is ready
+
+</p>
+</body>
+<script>
+    
+// to request xml api 
+const url ='https://randomuser.me/api/';  //we request api url in strings 
+let request = new XMLHttpRequest(); //we create a new instance of XMLHttpRequest
+ request.open('GET',url)//this takes a request method and the url 
+//  request.open('GET',"https://randomuser.me/api/");
+
+// Set up a callback function to handle the state change of the request
+request.onreadystatechange = () => {
+    console.log(request.readyState); // Log the current state of the request
+    if (request.readyState === 4) { // Check if the request has finished and the response is ready
+        const data = JSON.parse(request.responseText); // Parse the response text as JSON
+        console.log(data); // Log the parsed data
+        console.log(typeof data); // Log the data type
+        console.log(data.results[0].name.first); // Log the first name from the response data
+    }
+}
+request.send(); // Send the request
+
+</script>
+</html>
