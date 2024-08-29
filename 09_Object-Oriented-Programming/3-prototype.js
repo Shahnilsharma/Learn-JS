@@ -49,12 +49,13 @@ greet.display();
 // greet2.display(); //this results in error because we havent called its constructor by 'new'
 
 Object.prototype.onTop =function () {
-    //oject.prototype is on the top of heirarchy so as we discussed every thing in js is
-    // referenced to object on the base level so when we assign the top Node 
-    //any value this everything in our js code will have that object property which we set to top
-
     console.log('This is on top');  
   }
+
+  //oject.prototype is on the top of heirarchy so as we discussed every thing in js is
+    // referenced to object on the base level so when we assign the top Node 
+    //any value this everything in our js code will have that object property which we set to top
+    //the same way you can use string.prototype and arraty.prototype
 
   greet.onTop(); //output: This is on top
   Greetings.onTop(); //output: This is on top
