@@ -57,3 +57,4 @@ console.log(sum3(3,3));
 const person = () => ({name:"shahnil",age:'22'}); //parenthesis automatically cretes a block
 
 console.log(person()); 
+

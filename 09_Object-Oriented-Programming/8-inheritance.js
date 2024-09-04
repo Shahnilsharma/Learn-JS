@@ -4,7 +4,8 @@ class Student {
         this.name = name;
         this.rollNum = rollNum;
         }
-
+    static password='1234'; //by using static u can make it strict to this class only this doesnt allow
+                           //other inherited classes to access the data with static(private).
     
 }
 

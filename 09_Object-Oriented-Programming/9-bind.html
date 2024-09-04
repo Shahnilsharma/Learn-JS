@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bind</title>
+</head>
+<body>
+    <button id="anyButton">Click Me</button>
+</body>
+<script>
+    // to understand bind we will use a button , so the scenrio is 
+    //whenever someone clicks the button we get the contents in the class
+   
+   class Server{
+    constructor(){
+        this.data = "Hello everyone";
+        this.host= "hhtps://localhost:5000/"
+        //event listner
+        // document
+        // .querySelector("#anyButton")
+        // .addEventListener("click", this.getData);//output:undefined
+        
+        document
+        .querySelector("#anyButton")
+        .addEventListener("click", this.getData.bind(this));//output:Hello everyone from hhtps://localhost:5000/
+
+        //remeber while discussing call we discussed about how the context is lost
+        //so to avoid that we use bind it actually binds the referneces
+    }
+    getData(){
+        console.log(this.data + " from " + this.host);
+    }
+
+   }
+
+    const Button = new Server();
+
+
+</script>
+</html>
