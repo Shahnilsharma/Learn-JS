@@ -15,7 +15,7 @@ console.log('\n');//line break
 Object.defineProperty(student,"grade",{
     writable:false,
     enumerable:false,
-});
+}); //defineProperty was used as getter and setter at early time
 console.log(Object.getOwnPropertyDescriptor(student,"grade"));
 
 //output: { value: 'A', writable: false, enumerable: false, configurable: true
